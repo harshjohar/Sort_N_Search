@@ -42,3 +42,6 @@
     >> But ultimately, it doesn't make a difference as the time complexity of insertion sort(O(n**2)) is coming from swaps
     >> Hence time complexity will still be O(n^2)
     >> Thus, no need of binary search there.
+
+### Binary search on Answer
+    >> When a function if monotonic, we can apply binary search there.
