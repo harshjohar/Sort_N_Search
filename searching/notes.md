@@ -26,3 +26,19 @@
     __Properties__
     >> Time Complexity:     O(log(n))
     >> Space Complexity:    O(1)
+
+### Binary Search (Fully Sorted)
+
+    >> implemented in **binary_search_sorted.py**
+
+### Binary Search (Sorted Rotated)
+
+    >> implemented in **binary_search_rotated_sorted.py**
+
+### Binary Search (unsorted)
+
+### Optimization of Insertion Sort
+    >> We can try to optimise the insertion by using binary search to find the correct index for inserting.
+    >> But ultimately, it doesn't make a difference as the time complexity of insertion sort(O(n**2)) is coming from swaps
+    >> Hence time complexity will still be O(n^2)
+    >> Thus, no need of binary search there.

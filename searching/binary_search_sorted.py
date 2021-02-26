@@ -13,6 +13,6 @@ def binary_search(arr, target):
             left = mid+1
     return -1
 
-li = [99,66,55,22,33,45,68,22,84,66,77,999,333,44, 787,456,654]
-target = 787
+li = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+target = 5
 print(binary_search(li, target))
