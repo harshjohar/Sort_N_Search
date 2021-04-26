@@ -71,6 +71,14 @@ int main() {
 
     v.pop_back();
     cout<<v.size()<<endl;
+
+    // Using vector of STL(Standard Template Library)
+    vector<int> vect;
+    vect.push_back(2);
+    cout<<vect.size()<<endl;
+    cout<<vect.capacity()<<endl;
+    vect.emplace_back(7);
+    for(int i=0; i<vect.size(); i++) cout<<vect[i]<<endl;
     
     return 0;
 }
