@@ -16,6 +16,7 @@
     >> Heaps
     >> Tries
 ___
+___
 ## What is a data structure?
     It is a particular way of storing and organising your data.
 
@@ -78,3 +79,23 @@ ___
     TC = theta(1) {average}
     Worst case = O(n)
 
+___
+___
+
+## Object Oriented Programming
+    + Classes
+    + Objects
+
+### Terminologies
+___
+
+#### Class
+    It is a user defined prototype/blueprint for a real world object that defines properties of the object.
+    All Functions are written here, called as methods.
+#### Object
+    This is an individual real world entity that is based on the blueprint of some class. This is a unique instance of a class.
+#### Constructor
+    Special function which is used to initialise a brand new object from a class.
+    
+    In python this function is '__init__'
+    
