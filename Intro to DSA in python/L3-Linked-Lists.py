@@ -1,101 +1,108 @@
 # Implementation of linked list
 class Node:
-	data = -1
-	next = None
+    data=-1
+    next=None
 
-	def __init__(self, data):
-		self.data = data
+    def __init__(self, data):
+        self.data=data
 
+    # Adding data in linked lists
+    # at head
+    # at tail
+    # in middle somewhere
 
 def display_LL(head):
-	temp = head
-	while temp != None:
-		print(temp.data, end = " ")
-		temp = temp.next
-
-	print()
-	return
+    tmp=head
+    while tmp!=None:
+        print(tmp.data, end=' ')
+        tmp=tmp.next
+    print()
+    return
 
 def length_of_LL(head):
-	temp = head
-	sz = 0
-	while temp != None:
-		sz += 1
-		temp = temp.next
-
-	return sz
+    tmp=head
+    sz=0
+    while tmp!=None:
+        sz+=1
+        tmp=tmp.next
+    return sz
 
 def insert_at_head(head, data):
-	if head == None:
-		return Node(data)
-		 
-	new_node = Node(data)
-	new_node.next = head
-	head = new_node
-	return head
+    if head == None:
+        return Node(data)
+    
+    new_node = Node(data)
+    new_node.next = head
+    head = new_node
+    return head
 
 def insert_at_tail(head, data):
-	if head == None:
-		return Node(data)
-	temp = head
-	while temp.next != None:
-		temp = temp.next
+    if head==None:
+        return Node(data)
 
-	new_node = Node(data)
-	temp.next = new_node
-	return head
+    tmp=head
+    while tmp.next != None:
+        tmp=tmp.next
 
+    new_node = Node(data)
+    tmp.next = new_node
+    return head
 
-def insert_at(head, data, pos = 0):
-	if pos == 0:
-		return insert_at_head(head, data)
-	if pos >= length_of_LL(head):
-		return insert_at_tail(head, data)
-
-	temp = head
-	while pos != 1:
-		pos -= 1
-		temp = temp.next
-
-	new_node = Node(data)
-	new_node.next = temp.next
-	temp.next = new_node
-	return head
+def insert_at(head, data, pos=0):
+    if pos==0:
+        return insert_at_head(head, data)
+    
+    if pos >= length_of_LL(head):
+        return insert_at_tail(head, data)
+    
+    tmp=head
+    while pos != 1:
+        pos-=1
+        tmp=tmp.next
+    
+    new_node = Node(data)
+    new_node.next = tmp.next
+    tmp.next=new_node
+    return head
 
 def delete_at_head(head):
-	if head == None:
-		return None
-	temp = head
-	head = head.next
-	temp.next = None
-	return head	
+    if head==None:
+        print("msti nai")
+        return None
+    tmp=head
+    head=head.next
+    tmp.next=None
+    return head
 
 def delete_at_tail(head):
-	temp = head
-	prev = None
-	while(temp.next != None):
-		prev = temp
-		temp = temp.next
+    if head==None:
+        print("msti nai")
+        return
 
-	# when this loop ends temp points at the tail and prev at the prev node to the tail
-	prev.next = None
-	return head
+    tmp=head
+    prev=None
+    while tmp.next != None:
+        prev=tmp
+        tmp=tmp.next
 
-def delete_At(head, pos = 0):
-	if pos == 0:
-		return delete_at_head(head)
-	if pos >= length_of_LL(head):
-		return delete_at_tail(head)
+    # tmp is now the tail , prev is second last
+    prev.next=None
+    return head
 
-	temp = head
-	while pos != 1:
-		pos -= 1
-		temp = temp.next
-
-	tobedeleted = temp.next
-	temp.next = temp.next.next
-	tobedeleted.next = None
-	return head
+def delete_at(head, pos=0):
+    if pos==0:
+        return delete_at_head(head)
+    if pos>=length_of_LL(head):
+        return delete_at_tail(head)
+    
+    tmp=head
+    while pos!=1:
+        pos-=1
+        tmp=tmp.next
+    dele=tmp.next
+    tmp.next=tmp.next.next
+    dele.next=None
+    return head
 
 '''
 Find mid node of a Linked List without using length function and by iterating only once on the linked list.
@@ -128,7 +135,7 @@ while n>0:
     # print(head.data)
 head = insert_at(head, 33, 4)
 display_LL(head)
-delete_at_head(head)
+head = delete_at_head(head)
 display_LL(head)
 delete_at_tail(head)
 display_LL(head)
