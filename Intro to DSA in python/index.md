@@ -63,7 +63,8 @@ ___
 
     References counting
         + Counts the number of references, when its number changes, GC triggers.
-
+___
+___
 ## Arrays
     Arrays are linear data structure, which stores homogenous data in contigious memory location.
     + Using array module in python
@@ -98,4 +99,37 @@ ___
     Special function which is used to initialise a brand new object from a class.
     
     In python this function is '__init__'
+___
+___
+
+## Linked Lists
+    What is need of linked list?
+
+    Issues with arrays:
+        > We need to give size of arrays
+        > Always have contiguous memory allocation.
     
+    Linked lists are linear data structure that store one data element in ana entity called as a node, and multiple such nodes are connected to form a chained list. The nodes are not required to be created in continuous memry blocks, so linked lists never consumes continuous memory space.
+
+    > Like a necklace, each bead is a node.
+
+    Each node has:
+        > Data value
+        > Address value of next node.
+
+    Head : First Node
+    Tail : Last Node
+
+    Types of linked lists:
+        > Singly linked list
+    
+    Uses:
+        > Forward and backward buttons
+        > Music players
+        > Cache Algorithms
+        > Base of Hash-maps
+
+### Linked List Methods
+    Insert at head - O(1) - vs O(n) is arrays
+    Insert at the tail - O(n) - same as arrays
+    Insert at middle - O(n) - same as arrays
