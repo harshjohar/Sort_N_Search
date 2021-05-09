@@ -124,20 +124,50 @@ def find_mid_node(head):
 Your are given two linked lists(only single-digit) of same size, add them and return a new linked list.
 '''
 
+def sum_LL_same_size(head1, head2):
+    if head1==None or head2==None:
+        return (None, 0)
+    result = Node(0)
+    returned_node, carry = sum_LL_same_size(head1.next, head2.next)
+    result.next = returned_node
+    sum_ = head1.data + head2.data + carry
+    carry = sum_//10
+    result.data = sum_%10
+    return (result, carry)
 
+
+def sum_LL(head1, head2):
+    result, carry=sum_LL_same_size(head1, head2)
+    if carry==0:
+        return result
+    n=Node(carry)
+    n.next = result
+    return n
 
 n=int(input())
-head=None
+head1=None
 while n>0:
     n-=1
     x=int(input())
-    head=insert_at_tail(head, x)
+    head1=insert_at_tail(head1, x)
+m=int(input())
+head2=None
+while m>0:
+    m-=1
+    x=int(input())
+    head2=insert_at_tail(head2, x)
+
+display_LL(head1)
+display_LL(head2)
+
+sum_ = sum_LL(head1, head2)
+display_LL(sum_)
     # print(head.data)
-head = insert_at(head, 33, 4)
-display_LL(head)
-head = delete_at_head(head)
-display_LL(head)
-delete_at_tail(head)
-display_LL(head)
-delete_at(head, 2)
-display_LL(head)
+# head = insert_at(head, 33, 4)
+# display_LL(head)
+# head = delete_at_head(head)
+# display_LL(head)
+# delete_at_tail(head)
+# display_LL(head)
+# delete_at(head, 2)
+# display_LL(head)
