@@ -133,3 +133,14 @@ ___
     Insert at head - O(1) - vs O(n) is arrays
     Insert at the tail - O(n) - same as arrays
     Insert at middle - O(n) - same as arrays
+
+### DOubly Linked List
+    Insert at head - O(1) - vs O(n) is arrays
+    Insert at the tail - O(1) 
+    Insert at middle - O(1)
+
+### Types of Linked Lists
+    - Singly LL
+    - Double LL
+    - Circular LL
+    - Doubly Circular LL

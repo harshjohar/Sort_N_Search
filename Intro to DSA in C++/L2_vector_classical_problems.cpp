@@ -2,18 +2,17 @@
 using namespace std;
 #define vi vector<int>
 #define int long long int
-
+#define endl "\n"
 // 2D vector -> vector<vector<int>> v;
 // other way -> vector<vector<int>> v(n,vector<int>(m))
 // vector<int> has by default value of 0
 
 
-// Q1
 // Given an array of integers(size N)
 // Print N numbers where ans[i] = max(a[j]) where j!=i
 // Input -> 5 1 2 3
 // Output -> 3 5 5 5
-void Q1() {
+void max_expect_me() {
     int n; cin>>n;
     vi a(n);
     for(int i=0; i<n; i++) {
@@ -32,14 +31,13 @@ void Q1() {
 }
 
 
-// Q2
 // Given an array of integers(size N)
 // Print N numbers where ans[i] = product(a[j]) where j!=i
 // Input -> 5 1 2 3
 // Output -> 6 30 15 10
 // No element should be 0
 
-void Q2() {
+void product_except_me() {
     int n; cin>>n;
     vi a(n);
     int flag = 1;
@@ -75,7 +73,6 @@ void Q2() {
 /* ---------------------------------------------------------- */
 
 
-// Q3
 // Given an array with integers
 // Queries: 
 //      l r x
@@ -91,7 +88,7 @@ void Q2() {
 // let b = 0 0 0 0 0 0 0 (size n)
 // +x at l and -x at r+1 for every query
 // now prefix sum
-int Q3() {
+int pref_arr() {
     int n; cin>>n;
     vi a(n+1);
     for(int i=0; i<=n; ++i) {
@@ -110,22 +107,11 @@ int Q3() {
     return 0;
 }
 
-// Q4
-// 2D vector
-// Queries
-// i1, j1 to i2, j2 submatrix 
-// Give sum of that submatrix
 
-void Q4() {
-    return;
-}
-
-
-// Q5
 // http://codeforces.com/contest/1272/problem/C
 
 // Solution:
-int Q5() {
+int broken_keyboard() {
     int n, k; cin>>n>>k;
     string s; cin>>s;
 
@@ -153,21 +139,13 @@ int Q5() {
     return 0;
 }
 
-// Q6
-// Given an array divide the array into maximum number of contiguous parts 
-// such that if we sort the individual parts the array also get's sorted
+// Tell if it is possible to rearrange the array in such a way that 
+// the sum of no 2 cosecutive elements id divisible by 3.
 
-int Q6() {
+int notDivBy3() {
     return 0;
 }
 
-
 int32_t main() {
-    Q1();
-    Q2();
-    Q3();
-    Q4();
-    Q5();
-    Q6();
     return 0;
 }
