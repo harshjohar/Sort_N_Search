@@ -140,9 +140,10 @@ int broken_keyboard() {
 }
 
 // Tell if it is possible to rearrange the array in such a way that 
-// the sum of no 2 cosecutive elements id divisible by 3.
+// the sum of no 2 cosecutive elements is divisible by 3.
 
 int notDivBy3() {
+    // done in L7
     return 0;
 }
 
