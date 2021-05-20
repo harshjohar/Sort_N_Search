@@ -17,5 +17,5 @@ int main() {
     vector<int> v = {1, 2,3, 4 , 5};
     int h=10;
     for_each(v, [](int v) {cout<<"value is: "<<v<<endl;});
-    // fun(v, [&](int x) {cout<<"Puthe pnge: "<<h-x<<endl;})
+    // fun(v, [h](int x) {cout<<"Puthe pnge: "<<h-x<<endl;});
 }
