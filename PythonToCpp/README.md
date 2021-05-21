@@ -31,6 +31,7 @@ int main() {
 
 ## Basic stuff
 + `sizeof()` : return the size of object(in bytes).
+It is machine-dependent. But in most machines nowadays, following are defined sizes.
     + bool : 1
     + int : 4
     + long : 8
@@ -160,8 +161,18 @@ void fun(int *x, int *y)  {
 fun(&x, &y);
 // -> change will be observed in real x, y
 ```
-References cannot be NULL.
-References need to be declared when defined.
+### Important info about references.
++ Once a reference is declared and defined, its value can't be reassigned.
+```cpp
+int x = 10;
+int &f = x;
+int y = 9;
+f = y;
+// -> here value of both x and f will become equal to y, but f will still remain only a reference of x and not of y
+```
++ Pointers can be reassigned.
++ References cannot be NULL.
++ References need to be declared when defined.
 + `int &x` is not correct
 
-Pointers can be declared without  defining.
++ Pointers can be declared without  defining.
