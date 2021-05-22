@@ -71,8 +71,63 @@ It is machine-dependent. But in most machines nowadays, following are defined si
     + `int z = (10<45) ? 100 : 69;`
     + z = 100
 
-## Lecture 2
-### Pending
+## Compiler Optimizations
+```cpp
+int main() {
+    return 0;
+}
+```
+Steps of compilation:
++ raw C++ code
++ expand preprocessors(inlcude, define etc.)
+    + `g++ -E <filename>`
++ assembly
+    + `g++ -S <filename>`
++ machine excecutable code
+    + linkers and loaders -> read more in OS and Microprocessors
+
+There are many levels of optimisation
++ removes unused header files
++ removes unused variables
++ removes unused functions
+
+## Conditionals and Loops
+### Conditional
+Syntax:
+```cpp
+if(condition) {
+    <some code>;
+}
+else if(condition 2) {
+    <some more code>;
+}
+else {
+    <some more>
+}
+```
+
+### Loops
++ While loop
+    ```cpp
+    while(condition) {
+        <some code>;
+    }
+    ```
++ For loop
+    ```cpp
+    for(initialisation; comparison; increment) {
+        <some code>;
+    }
+    ```
+
+## Custom Practices
+### Output Formatting
++ `setw(spaces)` -> to add multiple white spaces
++ `setprecision(size)` -> to set precison after decimal
++ `fixed(x)` -> fixed number of places after decimal.
++ `scientific(x)` -> scientific notation.
++ `cout.precison(x);` -> set the precision for whole file.
++ C style formatting
 
 ## Pointers and References
 + Data is stored in the buckets in memory.
@@ -172,7 +227,7 @@ f = y;
 ```
 + Pointers can be reassigned.
 + References cannot be NULL.
-+ References need to be declared when defined.
++ References need to be defined when declared.
 + `int &x` is not correct
 
 + Pointers can be declared without  defining.
