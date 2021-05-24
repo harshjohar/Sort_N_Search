@@ -230,4 +230,146 @@ f = y;
 + References need to be defined when declared.
 + `int &x` is not correct
 
-+ Pointers can be declared without  defining.
++ Pointers can be declared without defining.
+
+## Structs in C++
+Custom user defined data-types. Amalgam of multiple primitive data types. Only available in here.
+
+Example: A product in e-commerce website(pseudocode).
+```
+Product {
+    string name;
+    string description;
+    float cost;
+}
+```
+
+### Implementation in C++
+```cpp
+struct strname {
+    // data members
+    string name;
+    string descrption;
+    int cost;
+    int id;
+
+    // member functions
+    void display {
+        cout<<"Name: "<<name;
+        cout<<"Cost: "<<cost;
+    }
+}; 
+```
+
+### Defining in main
+```cpp
+struct strname str1;
+string n = str1.name //-> to get data values
+str.display() // -> to run member functions
+
+// initialisation with values
+struct strname str2 = {"Iphone", "Bekaar phone", 100900, 38624};
+// order should be same.
+```
+
+### Passing into a function
+By default struct is passed by copy into the functions.
+```cpp
+void updateStr(strname s, int x) {
+    s.cost = x;
+    return;
+} // -> memory inefficient.
+```
+
+Passing by refernce
+```cpp
+void updateStr(strname &s, int x) {
+    s.cost = x;
+    return;
+} // -> can change the real struct
+```
+### Advantages of References
+Very helpful when we don't want copies of same data in the memory. 
+
+## Types of pointers
+1. __Dangling pointer__: A pointer pointing to a memory location that has been deleted. Can create issues in the runtime.
+2. __NULL pointer__: A pointer which points to nothing or NULL.
+    + NULL and uninitialised ptr are different.
+    ```cpp
+    // NULL
+    int *p1 = NULL;
+    // Uninitialised
+    int *p2; //-> point to any random address.
+    ```
+3. __Void Pointer__: Generic Pointer. Can point to anything. We don't need to define the data type of this type of pointer.
+    + Can't dereference it.
+    + No pointer arthematic is supported.
+    ```cpp
+    void *ptr;
+    ptr = &x;
+    // x can be of any data type.
+    ```
+
+    + How to deference?
+    ```cpp
+    // first type-cast into required type
+    int *ptr1 = (int*) ptr;
+    cout<<*ptr1<<endl;
+    ```
+
+    + Normally, we first initialise a variable and then we get the address.
+    + But here, we can get a bucket in memory first, and then set some value.
+    + If we use `malloc`, `calloc`, `realloc`.
+    ```cpp
+    int *pm;
+    void *v;
+    v = malloc(5); // can be of any size.
+    ```
+4. __Wild pointer__: An uninitialised pointer is a wild pointer. May lead to memory leakage. `int*p`
+5. __Function Pointer__: Advanced C++ L1.
+
+## New and Delete
++ `malloc`, `calloc`, `realloc` are the old function.
++ `new` is a new keyword in C++, it has same use as previous
++ `delete` has same use as `free`.
+```cpp
+int *p = new int
+*p = 10;
+cout<<p<<" "<<*p<<endl;
+```
+### Arrays
+Covered in L1 Advanced concepts in C++.
+```cpp
+// methods to initiate an array in heap
+int *a = new int[10];
+
+// 2D array
+int* *arr = new int *[10]; 
+for(int i=0; i<10; i++) {
+    arr[i]=new int[10];
+}
+// array in stack frame
+int arr[10];
+```
+
+### delete
+```cpp
+delete x; // for int
+delete [] x; // for array
+```
+2d array
+```cpp
+for(int i=0; i<n; i++) {
+    delete [] arr[i];
+}
+delete [] arr;
+```
+
+### nothrow
+It will stop the error even if the memory if full in runtime. Otherwise it gives a bad-alloc error.
+```cpp
+int *d = new(nothrow) int(9);
+```
+
+## Now play with pointers and references
+BYE BYE
