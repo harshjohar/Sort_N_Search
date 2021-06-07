@@ -1,6 +1,3 @@
-from abc import abstractproperty
-
-
 class TreeNode: 
     # This class doesn't represent a tree but one node of tree 
     def __init__(self, name, designation): 
