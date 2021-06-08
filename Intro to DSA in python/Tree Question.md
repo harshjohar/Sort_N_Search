@@ -2,7 +2,7 @@
 
 1. Below is the management hierarchy of a company.
 
-    ![ss](management_both.PNG)
+    ![ss](management_both.png)
 
 Extend print_tree function such that it can print either name tree, designation tree or name and designation tree. As shown below,
 
