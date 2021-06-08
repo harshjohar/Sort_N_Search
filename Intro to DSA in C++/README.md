@@ -160,3 +160,35 @@ Works on principle of LIFO
 + size
 + isEmpty
 + clear
+
+___
+___
+## Queue
+Works on principle on FIFO
++ First In First Out
+
+> Analogous to the queues of people
++ Used in
+    + Flash sales
+    + Task scheduling
+    + Preemptive round robin
+
+### Methods in Queue
++ enqueue (push)
++ dequeue (pop)
++ isEmpty (empty)
++ size  
++ front
++ clear
+
+___
+___
+## Deque
+SuperSet of queue and stack.
+> Deque = Doubly ended queue
+
+### Methods in deque
++ push_front
++ push_back
++ pop_front
++ pop_back
