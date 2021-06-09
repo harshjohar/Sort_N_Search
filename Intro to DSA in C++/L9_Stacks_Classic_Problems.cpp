@@ -82,7 +82,7 @@ void prev_greater() {
         while(!s.empty() and arr[s.top()] <=arr[i]) {
             s.pop();
         } 
-        s.empty() ? pg[i]=n : pg[i]=s.top();
+        s.empty() ? pg[i]=-1 : pg[i]=s.top();
         s.push(i);
     }
     for(int i=0; i<n; i++) {
@@ -94,18 +94,18 @@ void prev_greater() {
 // next greater -> same implementation + reverse for loop
 void next_greater() {
     int n; cin>>n;
-    vector<int> arr(n), ps(n-1);
+    vector<int> arr(n), ng(n-1);
     for(int i=0; i<n; i++) cin>>arr[i];
     stack<int> s;
-    for(int i=n-1; i<=0; i--) {
+    for(int i=n-1; i>=0; i--) {
         while(!s.empty() and arr[s.top()] <=arr[i]) {
             s.pop();
         } 
-        s.empty() ? ps[i]=n : ps[i]=s.top();
+        ng[i] = s.empty() ? n : s.top();
         s.push(i);
     }
     for(int i=0; i<n; i++) {
-        cout<<i-ps[i]<<' ';
+        cout<<ng[i]-i<<' ';
     }
     cout<<"\n";
 }
@@ -113,16 +113,17 @@ void next_greater() {
 
 // prev smaller
 vi prev_smaller(vi arr) {
-    int n; cin>>n;
+    // int n; cin>>n;
     // vector<int> arr(n), ps(n-1);
-    vi ps(n-1);
-    for(int i=0; i<n; i++) cin>>arr[i];
+    // for(int i=0; i<n; i++) cin>>arr[i];
+    int n= arr.size();
     stack<int> s;
+    vi ps(n-1);
     for(int i=0; i<n; i++) {
         while(!s.empty() and arr[s.top()] >=arr[i]) {
             s.pop();
         } 
-        s.empty() ? ps[i]=n : ps[i]=s.top();
+        s.empty() ? ps[i]=-1 : ps[i]=s.top();
         s.push(i);
     }
     // for(int i=0; i<n; i++) {
@@ -134,16 +135,17 @@ vi prev_smaller(vi arr) {
 
 // next smaller
 vi next_smaller(vi arr) {
-    int n; cin>>n;
+    // int n; cin>>n;
     // vector<int> arr(n), ns(n-1);
+    // for(int i=0; i<n; i++) cin>>arr[i];
+    int n=arr.size();
     vi ns(n-1);
-    for(int i=0; i<n; i++) cin>>arr[i];
     stack<int> s;
-    for(int i=n-1; i<=0; i--) {
+    for(int i=n-1; i>=0; i--) {
         while(!s.empty() and arr[s.top()] >=arr[i]) {
             s.pop();
         } 
-        s.empty() ? ns[i]=n : ns[i]=s.top();
+        ns[i] = s.empty() ? n : s.top();
         s.push(i);
     }
     // for(int i=0; i<n; i++) {
@@ -174,4 +176,17 @@ int area() {
 int main() {
     string s = "4+3*5+(9/3+7)";
     cout<<solve_eqn(postFix(s))<<"\n";
+    vi arr;
+    arr.push_back(5);
+    arr.push_back(4);
+    arr.push_back(8);
+    arr.push_back(2);
+    arr.push_back(1);
+    vi ns = prev_smaller(arr);
+    for(int i=0; i<4; i++) cout<<ns[i]<<" ";
+    // next_greater();
+    // prev_greater();
 }
+
+// 5 4 8 2 1
+//   1 3 3 4
