@@ -56,7 +56,7 @@ void party() {
         adj[i].push_back(j);
         adj[j].push_back(i);
 
-        num[i]++;
+        num[i]++, num[j]++;
     }
 
     queue<int> q;
@@ -71,7 +71,7 @@ void party() {
         for(int j : adj[i]) {
             num[j]--;
 
-            if(num[j] == k-1) 
+            if(coming[i] == true and num[j] == k-1) 
                 coming[j]=false, q.push(j);
         }
     }
